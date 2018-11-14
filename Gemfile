@@ -59,6 +59,10 @@ group :development do
 
   # Better error page for Rack apps
   gem "better_errors"
+
+  # Rails ERD
+  gem 'rails-erd'
+
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
