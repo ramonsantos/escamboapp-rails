@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Escamboapp</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= stylesheet_link_tag 'backoffice', media: 'all', 'data-turbolinks-track' => true %>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'backoffice', 'data-turbolinks-track' => true %>
+    <title>Backoffice</title>
 
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<h1>BackOffice</h1>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'backoffice', media: 'all', 'data-turbolinks-track' => true %>
 
-<%= yield %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'backoffice', 'data-turbolinks-track' => true %>
 
-</body>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <%= render partial: 'layouts/backoffice_shared/navigation' %>
+
+      <%= yield %>
+    </div>
+  </body>
 </html>
