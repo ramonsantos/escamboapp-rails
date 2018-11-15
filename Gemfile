@@ -26,6 +26,8 @@ group :development, :test do
 end
 
 group :development do
+  gem 'pry-rails'
+  gem 'pry-byebug'
   gem "better_errors"
 
   gem 'rails-erd'
