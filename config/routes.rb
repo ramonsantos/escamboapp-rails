@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  namespace :site do
-    get 'home', to: 'home#index'
-  end
-
   get 'backoffice', to: 'backoffice/dashboard#index'
+
+  namespace :backoffice do
+    get 'home', to: 'home#index'
+    resources :categories, expect: [:show, :destroy]
+  end
 
   devise_for :admins
   devise_for :members
