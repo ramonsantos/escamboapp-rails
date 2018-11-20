@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'devise-i18n'
 gem 'enum_help'
+gem 'pundit'
 
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -22,7 +23,7 @@ source 'https://rails-assets.org' do
 end
 
 gem 'jquery-rails'
-gem 'turbolinks'
+# gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
