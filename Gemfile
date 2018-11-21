@@ -37,7 +37,6 @@ group :development do
   gem 'faker'
   gem 'pry-rails'
   gem 'pry-byebug'
-  gem "better_errors"
   gem 'mailcatcher'
 
   gem 'rails-erd'
