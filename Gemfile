@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.5'
+ruby '2.4.6'
+
+gem 'rails', '4.2.11.1'
 
 gem 'rails-i18n'
 
