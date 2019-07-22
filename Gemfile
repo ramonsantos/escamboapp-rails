@@ -6,7 +6,7 @@ gem 'rails', '4.2.11.1'
 
 gem 'rails-i18n'
 
-gem 'sqlite3'
+gem 'pg', '~> 0.18.4'
 
 gem 'devise'
 gem 'devise-i18n'
