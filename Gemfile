@@ -18,6 +18,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap_sb_admin_base_v2'
 
+gem 'money-rails'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootstrap', '3.3.7'
   gem 'rails-assets-notifyjs'
