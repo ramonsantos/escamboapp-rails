@@ -22,6 +22,7 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'money-rails'
 gem 'paperclip', '~> 5.0.0'
+gem 'jquery-ui-rails'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-bootbox'
