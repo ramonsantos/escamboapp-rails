@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 categories = [
   'Animais e acessórios',
   'Esportes',
@@ -21,4 +23,10 @@ Admin.create!(
   password: '123456',
   password_confirmation: '123456',
   role: 0
+)
+
+Member.create!(
+  email: 'membro@membro.com',
+  password: '123456',
+  password_confirmation: '123456'
 )
