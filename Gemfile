@@ -25,9 +25,10 @@ gem 'paperclip', '~> 5.0.0'
 gem 'jquery-ui-rails'
 
 source 'https://rails-assets.org' do
+  gem 'rails-assets-animate-css'
   gem 'rails-assets-bootbox'
   gem 'rails-assets-bootstrap', '3.3.7'
-  gem 'rails-assets-notifyjs'
+  gem 'rails-assets-bootstrap.growl'
 end
 
 gem 'jquery-rails'
