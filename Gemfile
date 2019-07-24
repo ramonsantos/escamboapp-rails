@@ -20,10 +20,12 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'friendly_id'
 gem 'jquery-ui-rails'
 gem 'money-rails'
 gem 'paperclip', '~> 5.0.0'
 gem 'redcarpet'
+gem 'wiselinks'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-animate-css'
