@@ -20,15 +20,18 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 
+gem 'jquery-ui-rails'
 gem 'money-rails'
 gem 'paperclip', '~> 5.0.0'
-gem 'jquery-ui-rails'
+gem 'redcarpet'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-animate-css'
   gem 'rails-assets-bootbox'
   gem 'rails-assets-bootstrap', '3.3.7'
   gem 'rails-assets-bootstrap.growl'
+  gem 'rails-assets-bootstrap-markdown'
+  gem 'rails-assets-marked'
 end
 
 gem 'jquery-rails'
@@ -43,6 +46,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'doctor_ipsum'
   gem 'faker'
   gem 'lerolero_generator'
   gem 'mailcatcher'

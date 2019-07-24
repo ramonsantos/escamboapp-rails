@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 class Ad < ActiveRecord::Base
+  before_save :md_to_html
+
   belongs_to :category
   belongs_to :member
 
-  validates :title, :description, :category, presence: true
+  validates :title, :description_md, :description_short, :category, presence: true
   validates :picture, :finish_date, presence: true
   validates :price, numericality: { greater_than: 0 }
 
@@ -15,4 +17,26 @@ class Ad < ActiveRecord::Base
   validates_attachment_content_type :picture, content_type: %r{\Aimage/.*\z}
 
   monetize :price_cents
+
+  private
+
+  def md_to_html
+    options = {
+      filter_html: true,
+      link_attributes: {
+        rel: 'nofollow',
+        target: '_blank'
+      }
+    }
+
+    extensions = {
+      space_after_headers: true,
+      autolink: true
+    }
+
+    renderer = Redcarpet::Render::HTML.new(options)
+    markdown = Redcarpet::Markdown.new(renderer, extensions)
+
+    self.description = markdown.render(description_md)
+  end
 end
