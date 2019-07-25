@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190724214217) do
+ActiveRecord::Schema.define(version: 20190725221157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,17 @@ ActiveRecord::Schema.define(version: 20190724214217) do
 
   add_index "categories", ["slug"], name: "index_categories_on_slug", unique: true, using: :btree
 
+  create_table "comments", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "member_id"
+    t.integer  "ad_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["ad_id"], name: "index_comments_on_ad_id", using: :btree
+  add_index "comments", ["member_id"], name: "index_comments_on_member_id", using: :btree
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
@@ -98,4 +109,6 @@ ActiveRecord::Schema.define(version: 20190724214217) do
 
   add_foreign_key "ads", "categories"
   add_foreign_key "ads", "members"
+  add_foreign_key "comments", "ads"
+  add_foreign_key "comments", "members"
 end

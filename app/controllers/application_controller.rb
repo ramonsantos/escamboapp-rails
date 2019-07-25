@@ -3,6 +3,8 @@
 class ApplicationController < ActionController::Base
   include Pundit
 
+  before_filter :store_current_location, unless: :devise_controller?
+
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   protect_from_forgery with: :exception
@@ -24,5 +26,11 @@ class ApplicationController < ActionController::Base
   def user_not_authorized
     flash[:alert] = I18n.t('messages.not_authorized')
     redirect_to(request.referrer || root_path)
+  end
+
+  private
+
+  def store_current_location
+    store_location_for(:member, request.url)
   end
 end
