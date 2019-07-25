@@ -22,6 +22,8 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'friendly_id'
 gem 'jquery-ui-rails'
+gem 'kaminari'
+gem 'kaminari-i18n'
 gem 'money-rails'
 gem 'paperclip', '~> 5.0.0'
 gem 'redcarpet'
