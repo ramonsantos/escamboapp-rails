@@ -3,6 +3,8 @@
 class Ad < ActiveRecord::Base
   QTT_PER_PAGE = 6
 
+  ratyrate_rateable 'quality'
+
   before_save :md_to_html
 
   belongs_to :category, counter_cache: true
@@ -18,7 +20,7 @@ class Ad < ActiveRecord::Base
   scope :search, ->(term, page) { where('lower(title) LIKE ?', "%#{term.downcase}%").page(page).per(QTT_PER_PAGE) }
 
   scope :to_the, ->(member) { where(member: member) }
-  scope :by_category, ->(id) { where(category: id) }
+  scope :by_category, ->(id, page) { where(category: id).page(page).per(QTT_PER_PAGE) }
 
   has_attached_file :picture, styles: { large: '800x300#', medium: '320x150#', thumb: '100x100>' }, default_url: '/images/:style/missing.png'
   validates_attachment_content_type :picture, content_type: %r{\Aimage/.*\z}

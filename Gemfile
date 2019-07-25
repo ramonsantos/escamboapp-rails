@@ -26,6 +26,7 @@ gem 'kaminari'
 gem 'kaminari-i18n'
 gem 'money-rails'
 gem 'paperclip', '~> 5.0.0'
+gem 'ratyrate'
 gem 'redcarpet'
 gem 'wiselinks'
 
