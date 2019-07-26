@@ -15,10 +15,9 @@ class Ad < ActiveRecord::Base
   validates :picture, :finish_date, presence: true
   validates :price, numericality: { greater_than: 0 }
 
+  scope :random, ->(quantity) { limit(quantity).order('RANDOM()') }
   scope :descending_order, ->(page) { order(created_at: :desc).page(page).per(QTT_PER_PAGE) }
-
   scope :search, ->(term, page) { where('lower(title) LIKE ?', "%#{term.downcase}%").page(page).per(QTT_PER_PAGE) }
-
   scope :to_the, ->(member) { where(member: member) }
   scope :by_category, ->(id, page) { where(category: id).page(page).per(QTT_PER_PAGE) }
 
@@ -26,6 +25,14 @@ class Ad < ActiveRecord::Base
   validates_attachment_content_type :picture, content_type: %r{\Aimage/.*\z}
 
   monetize :price_cents
+
+  def second
+    self[1]
+  end
+
+  def third
+    self[2]
+  end
 
   private
 
