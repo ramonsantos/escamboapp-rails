@@ -1,4 +1,9 @@
 'pt-BR':
+  helpers:
+    label:
+      member[profile_member_attributes]:
+        first_name: Primeiro Nome
+        second_name: Segundo Nome
   activerecord:
     models:
       member:
@@ -58,4 +63,4 @@
         updated_at: Atualizado em
         first_name: Primeiro nome
         second_name: Segundo nome
-        birthdate: Data de nascimentos
+        birthdate: Data de nascimento
