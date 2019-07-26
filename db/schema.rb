@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190726005612) do
+ActiveRecord::Schema.define(version: 20190726175633) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -124,6 +124,17 @@ ActiveRecord::Schema.define(version: 20190726005612) do
     t.datetime "updated_at"
   end
 
+  create_table "profile_members", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "second_name"
+    t.date     "birthdate"
+    t.integer  "member_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "profile_members", ["member_id"], name: "index_profile_members_on_member_id", using: :btree
+
   create_table "rates", force: :cascade do |t|
     t.integer  "rater_id"
     t.integer  "rateable_id"
@@ -153,4 +164,5 @@ ActiveRecord::Schema.define(version: 20190726005612) do
   add_foreign_key "ads", "members"
   add_foreign_key "comments", "ads"
   add_foreign_key "comments", "members"
+  add_foreign_key "profile_members", "members"
 end

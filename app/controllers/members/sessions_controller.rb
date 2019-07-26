@@ -6,7 +6,7 @@ class Members::SessionsController < Devise::SessionsController
   def after_sign_in_path_for(_)
     stored_location = stored_location_for(resource)
 
-    if stored_location.match(site_ad_detail_index_path)
+    if stored_location.match(site_ad_details_path)
       stored_location
     else
       site_profile_dashboard_index_path
