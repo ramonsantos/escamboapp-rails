@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Site::CategoriesController < ApplicationController
   def show
     @categories = Category.order_by_description

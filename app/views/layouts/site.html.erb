@@ -16,53 +16,55 @@
   </head>
 
   <body>
-      <div id="global-spin" class="loading" style="display: none;">Loading&#8230;</div>
+    <div id="global-spin" class="loading" style="display: none;">Loading&#8230;</div>
 
-      <%= render partial: 'layouts/site_shared/navigation' %>
+    <%= render partial: 'layouts/site_shared/navigation' %>
 
-      <div class="container">
-        <%= form_tag site_search_path, method: :get do %>
-          <div class="row">
-            <div class="well well-sm">
-              <div class="row">
-                <div class="col-lg-3"></div>
+    <div class="container">
+      <%= form_tag site_search_path, method: :get do %>
+        <div class="row">
+          <div class="well well-sm">
+            <div class="row">
+              <div class="col-lg-3">
+              </div>
 
-                <div class="col-lg-6">
-                  <div class="input-group">
-                    <%= text_field_tag(:q, params[:q] , { class: 'form-control', placeholder: 'Pesquisar por...' }) %>
+              <div class="col-lg-6">
+                <div class="input-group">
+                  <%= text_field_tag(:q, params[:q] , { class: 'form-control', placeholder: 'Pesquisar por...' }) %>
 
-                    <span class="input-group-btn">
-                      <%= submit_tag("Pesquisar", class:"btn btn-default") %>
-                    </span>
-                  </div>
+                  <span class="input-group-btn">
+                    <%= submit_tag("Pesquisar", class:"btn btn-default") %>
+                  </span>
                 </div>
+              </div>
 
-                <div class="col-lg-3"></div>
+              <div class="col-lg-3">
               </div>
             </div>
           </div>
-        <% end %>
+        </div>
+      <% end %>
 
-        <div class="row">
-          <%= render partial: 'layouts/site_shared/sidebar' %>
+      <div class="row">
+        <%= render partial: 'layouts/site_shared/sidebar' %>
 
-          <div id="home-detail" class="col-md-9">
-            <% if controller_path == 'site/home' %>
+        <div id="home-detail" class="col-md-9">
+          <% if controller_path == 'site/home' %>
               <%= render partial: 'layouts/site_shared/carousel' %>
-            <% end %>
+          <% end %>
 
-            <div class="row">
-              <%= yield %>
-            </div>
+          <div class="row">
+            <%= yield %>
           </div>
         </div>
       </div>
+    </div>
 
-      <%= render partial: "layouts/site_shared/footer" %>
+    <%= render partial: "layouts/site_shared/footer" %>
 
-      <%= javascript_include_tag 'application' %>
-      <%= javascript_include_tag 'site' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'site' %>
 
-      <%= render partial: 'layouts/shared/notifications'  %>
+    <%= render partial: 'layouts/shared/notifications'  %>
   </body>
 </html>

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Backoffice::AdminsController < BackofficeController
   before_action :set_admin, only: [:edit, :update, :destroy]
   after_action :verify_authorized, only: [:new, :destroy]
@@ -52,9 +54,7 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def params_admin
-    if password_blank?
-      params[:admin].except!(:password, :password_confirmation)
-    end
+    params[:admin].except!(:password, :password_confirmation) if password_blank?
 
     if @admin.blank?
       params.require(:admin).permit(:name, :email, :role, :password, :password_confirmation)
@@ -65,6 +65,6 @@ class Backoffice::AdminsController < BackofficeController
 
   def password_blank?
     params[:admin][:password].blank? &&
-    params[:admin][:password_confirmation].blank?
+      params[:admin][:password_confirmation].blank?
   end
 end

@@ -1,13 +1,12 @@
+# frozen_string_literal: true
+
 class Backoffice::CategoriesController::CategoryService
   attr_accessor :category
 
   def self.create(params_category)
     @category = Category.new(params_category)
 
-    if @category.valid?
-      @category.save!
-    end
-
+    @category.save! if @category.valid?
     @category
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Backoffice::SendMailController < ApplicationController
   def edit
     @admin = Admin.find(params[:id])
@@ -13,10 +15,10 @@ class Backoffice::SendMailController < ApplicationController
                                params[:'subject-text'],
                                params['message-text']).deliver_now
       @notify_message = I18n.t('messages.email_delivered')
-      @notify_flag = "success"
+      @notify_flag = 'success'
     rescue
       @notify_message = I18n.t('messages.email_not_delivered')
-      @notify_flag = "error"
+      @notify_flag = 'error'
     end
 
     respond_to do |format|

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Admin < ActiveRecord::Base
   # Constants
-  ROLES = {:full_access => 0, :restricted_access => 1}
+  ROLES = { full_access: 0, restricted_access: 1 }.freeze
 
   # Enums
   enum role: ROLES

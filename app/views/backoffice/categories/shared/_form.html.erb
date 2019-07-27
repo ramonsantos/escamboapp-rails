@@ -17,18 +17,18 @@
   <div class="panel-heading">
     <%= action_message %>
   </div>
-  <!-- /.panel-heading -->
+
   <div class="panel-body">
     <div class="col-lg-6">
       <%= form_for([:backoffice, @category]) do |f| %>
-      <div class="form-group">
-        <%= f.label :description %>
-        <%= f.text_field :description, class:"form-control", placeholder:"Ex: Animais/Pet" %>
+        <div class="form-group">
+          <%= f.label :description %>
+          <%= f.text_field :description, class:"form-control", placeholder:"Ex: Animais/Pet" %>
+        </div>
 
-      </div>
-      <button type="submit" class="btn btn-default"><%= t('buttons.save') %></button>
+        <button type="submit" class="btn btn-default"><%= t('buttons.save') %></button>
       <% end %>
     </div>
   </div>
-  <!-- /.panel-body -->
 </div>
+
