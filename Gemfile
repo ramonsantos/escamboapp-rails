@@ -8,11 +8,10 @@ gem 'rails', '4.2.11.1'
 
 gem 'rails-i18n'
 
-gem 'pg', '~> 0.18.4'
-
-gem 'devise'
+gem 'devise', '>= 4.6.0'
 gem 'devise-i18n'
 gem 'enum_help'
+gem 'pg', '~> 0.18.4'
 gem 'pundit'
 
 gem 'bootstrap_sb_admin_base_v2'
@@ -25,7 +24,7 @@ gem 'jquery-ui-rails'
 gem 'kaminari'
 gem 'kaminari-i18n'
 gem 'money-rails'
-gem 'paperclip', '~> 5.0.0'
+gem 'paperclip', '>= 5.2.0'
 gem 'ratyrate'
 gem 'redcarpet'
 gem 'wiselinks'
@@ -34,14 +33,13 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-animate-css'
   gem 'rails-assets-bootbox'
   gem 'rails-assets-bootstrap', '3.3.7'
-  gem 'rails-assets-bootstrap.growl'
   gem 'rails-assets-bootstrap-markdown'
+  gem 'rails-assets-bootstrap.growl'
   gem 'rails-assets-marked'
 end
 
-gem 'jquery-rails'
-# gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
+gem 'jquery-rails'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'foreman'
